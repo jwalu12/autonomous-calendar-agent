@@ -1,0 +1,22 @@
+services:
+  - type: cron
+    name: autonomous-calendar-agent-cron
+    runtime: python
+    schedule: "*/15 * * * *"
+    buildCommand: pip install -r requirements.txt
+    startCommand: python run_agent.py
+    envVars:
+      - key: MODEL_API_KEY
+        sync: false
+      - key: MODEL_BASE_URL
+        value: https://api.openai.com/v1
+      - key: MODEL_NAME
+        value: gpt-4.1-mini
+      - key: AGENT_INSTRUCTIONS
+        value: Review the calendar and recommend useful preparation steps.
+      - key: CALENDAR_EVENTS_JSON
+        value: "[]"
+      - key: CALENDAR_EVENTS_URL
+        value: ""
+      - key: RESULT_WEBHOOK_URL
+        value: ""
