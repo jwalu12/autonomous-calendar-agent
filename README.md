@@ -1,4 +1,4 @@
-# Autonomous Calendar Agent for Render Cron Jobs
+# Autonomous Agent Lomi
 
 This is a cron-job version of the calendar agent. It does not run a website or API server.
 
